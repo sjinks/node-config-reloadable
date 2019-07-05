@@ -11,9 +11,12 @@
     "url": "git+https://github.com/sjinks/node-config-reloadable.git"
   },
   "keywords": [
+    "conf",
     "config",
+    "configuration",
     "node-config",
-    "reload"
+    "reload",
+    "reloadable"
   ],
   "author": "Volodymyr Kolesnykov <volodymyr@wildwolf.name> (https://wildwolf.name/)",
   "license": "MIT",
@@ -28,5 +31,8 @@
   },
   "peerDependencies": {
     "config": "*"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
   }
 }
