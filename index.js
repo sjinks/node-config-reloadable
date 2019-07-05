@@ -16,8 +16,7 @@ function reloadConfigs () {
 }
 
 module.exports = function (reload) {
-  reload && reloadConfigs();
-  return require('config');
+  return reload ? reloadConfigs() : require('config');
 };
 
 module.exports.reloadConfigs = reloadConfigs;
