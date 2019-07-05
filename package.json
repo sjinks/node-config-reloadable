@@ -4,7 +4,8 @@
   "description": "Reloadable version of config",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard && tap test/test*.js"
+    "test": "semistandard && tap test/test*.js",
+    "test-scrutinizer": "semistandard && tap test/test*.js --cov --coverage-report=clover"
   },
   "repository": {
     "type": "git",
