@@ -1,5 +1,12 @@
 # node-config-reloadable
 
+[![Build Status](https://travis-ci.com/sjinks/node-config-reloadable.svg?branch=master)](https://travis-ci.com/sjinks/node-config-reloadable)
+[![npm version](https://img.shields.io/npm/v/config-reloadable.svg)](https://www.npmjs.com/package/config-reloadable)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/build-status/master)
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+
 Reloadable version of [lorenwest/node-config](https://github.com/lorenwest/node-config)
 
 # Install
