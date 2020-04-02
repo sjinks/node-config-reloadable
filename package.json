@@ -1,6 +1,6 @@
 {
   "name": "config-reloadable",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reloadable version of config",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "devDependencies": {
     "config": "^3.2.3",
     "semistandard": "^14.2.0",
-    "tap": "^14.6.9"
+    "tap": "^14.10.7"
   },
   "peerDependencies": {
     "config": "*"
