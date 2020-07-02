@@ -1,6 +1,6 @@
 # node-config-reloadable
 
-[![Build Status](https://travis-ci.com/sjinks/node-config-reloadable.svg?branch=master)](https://travis-ci.com/sjinks/node-config-reloadable)
+![Build and Test CI](https://github.com/sjinks/node-config-reloadable/workflows/Build%20and%20Test%20CI/badge.svg)
 [![npm version](https://img.shields.io/npm/v/config-reloadable.svg)](https://www.npmjs.com/package/config-reloadable)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sjinks/node-config-reloadable/?branch=master)
