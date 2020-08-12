@@ -1,6 +1,6 @@
 {
   "name": "config-reloadable",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Reloadable version of config",
   "main": "index.js",
   "scripts": {
