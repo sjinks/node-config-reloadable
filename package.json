@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/sjinks/node-config-reloadable#readme",
   "devDependencies": {
-    "config": "^3.3.1",
+    "config": "^3.3.2",
     "eslint-config-standard": "^13.0.1",
     "semistandard": "^14.2.3",
     "tap": "^14.10.8"
