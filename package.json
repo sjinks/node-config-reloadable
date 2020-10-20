@@ -4,8 +4,8 @@
   "description": "Reloadable version of config",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard && tap test/test*.js",
-    "test-scrutinizer": "semistandard && tap test/test*.js --cov --coverage-report=clover"
+    "test": "tap test/test*.js",
+    "test-scrutinizer": "tap test/test*.js --cov --coverage-report=clover"
   },
   "repository": {
     "type": "git",
@@ -27,15 +27,9 @@
   "homepage": "https://github.com/sjinks/node-config-reloadable#readme",
   "devDependencies": {
     "config": "^3.3.2",
-    "eslint-config-standard": "^13.0.1",
-    "semistandard": "^14.2.3",
     "tap": "^14.10.8"
   },
   "peerDependencies": {
     "config": "*"
-  },
-  "engines": {
-    "node": ">= 6.0.0"
-  },
-  "dependencies": {}
+  }
 }
