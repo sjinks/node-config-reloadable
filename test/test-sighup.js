@@ -23,7 +23,7 @@ tap.test('Test config reload on SIGHUP', function (t) {
 
   const runTest = () => {
     const r2 = conf.get('rand');
-    t.notEqual(r1, r2);
+    t.not(r1, r2);
   };
 
   const wait = () => {
