@@ -1,4 +1,4 @@
-const tap = require('tap');
+const { expect } = require('chai');
 const path = require('path');
 
 process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config');
@@ -14,16 +14,15 @@ process.on('SIGHUP', function () {
   reloaded = true;
 });
 
-tap.test('Test config reload on SIGHUP', function (t) {
+it('Test config reload on SIGHUP', function (done) {
   const r1 = conf.get('rand');
 
   reloaded = false;
   process.kill(process.pid, 'SIGHUP');
-  t.plan(1);
 
   const runTest = () => {
     const r2 = conf.get('rand');
-    t.not(r1, r2);
+    expect(r1).not.to.be.deep.equal(r2);
   };
 
   const wait = () => {
@@ -31,6 +30,7 @@ tap.test('Test config reload on SIGHUP', function (t) {
       setTimeout(wait, 10);
     } else {
       runTest();
+      done();
     }
   };
 
