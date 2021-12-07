@@ -1,22 +1,15 @@
-name: Build and Test
+name: Pre-release
 
 on:
   push:
-    branches:
-      - '**'
+    tags:
+      - "*"
   workflow_dispatch:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.message, '[ci skip]') || github.event_name == 'workflow_dispatch' }}
-    strategy:
-      matrix:
-        node:
-          - '12'
-          - '14'
-          - '16'
-    name: Build and Test (Node ${{ matrix.node }})
     steps:
       - name: Check out the code
         uses: actions/checkout@v2.4.0
@@ -24,7 +17,7 @@ jobs:
       - name: Set up Node.js environment
         uses: actions/setup-node@v2.5.0
         with:
-          node-version: ${{ matrix.node }}
+          node-version: lts/*
           cache: npm
 
       - name: Update npm
@@ -40,3 +33,18 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  release:
+    name: Prepare the release
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.14
+        with:
+          generate_release_notes: true
+          token: ${{ secrets.REPOSITORY_ACCESS_TOKEN }}
