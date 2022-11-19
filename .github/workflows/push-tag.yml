@@ -1,27 +1,29 @@
-name: Pre-release
+name: Pre-release Testing
 
 on:
   push:
     tags:
       - "*"
-  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
-    name: Build
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # v3.1.0
 
       - name: Set up Node.js environment
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3.5.1
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # v3.5.1
         with:
           node-version: lts/*
           cache: npm
 
       - name: Update npm
-        run: npm i -g npm
+        run: npm i -g npm@latest
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -35,18 +37,18 @@ jobs:
         run: npm test
 
   release:
-    permissions:
-      contents: read
     name: Prepare the release
     runs-on: ubuntu-latest
     needs: build
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # v3.1.0
 
-      - name: Release
-        uses: softprops/action-gh-release@1e07f4398721186383de40550babbdf2b84acfc5 # renovate: tag=v0.1.14
+      - name: Create a release
+        uses: softprops/action-gh-release@1e07f4398721186383de40550babbdf2b84acfc5 # v0.1.14
         with:
           generate_release_notes: true
-          token: ${{ secrets.REPOSITORY_ACCESS_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPOSITORY_ACCESS_TOKEN }}
