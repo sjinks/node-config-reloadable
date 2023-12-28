@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/sjinks/node-config-reloadable#readme",
   "devDependencies": {
-    "chai": "^4.3.10",
+    "chai": "^5.0.0",
     "config": "^3.3.9",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0"
