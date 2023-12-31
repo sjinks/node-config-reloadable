@@ -1,7 +1,7 @@
-const { expect } = require('chai');
-const path = require('path');
+const { notDeepEqual } = require('node:assert/strict');
+const { join } = require('node:path');
 
-process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config');
+process.env.NODE_CONFIG_DIR = join(__dirname, 'config');
 process.env.NODE_CONFIG = '{ "prop": "value" }';
 
 const config = require('../index');
@@ -22,7 +22,7 @@ it('Test config reload on SIGHUP', function (done) {
 
   const runTest = () => {
     const r2 = conf.get('rand');
-    expect(r1).not.to.be.deep.equal(r2);
+    notDeepEqual(r1, r2);
   };
 
   const wait = () => {
