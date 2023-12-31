@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * @return {import("config").IConfig}
+ */
 function reloadConfigs () {
   const config = require('config');
   const sources = config.util.getConfigSources();
@@ -15,6 +18,10 @@ function reloadConfigs () {
   return require('config');
 }
 
+/**
+ * @param {boolean} [reload=false] Whether to reload the configuration
+ * @return {import("config").IConfig}
+ */
 module.exports = function (reload) {
   return reload ? reloadConfigs() : require('config');
 };

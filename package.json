@@ -3,6 +3,7 @@
   "version": "1.0.10",
   "description": "Reloadable version of config",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "nyc --reporter=clover --reporter=text mocha test/"
   },
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/sjinks/node-config-reloadable#readme",
   "devDependencies": {
+    "@types/config": "^3.3.3",
     "config": "^3.3.9",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0"
@@ -32,6 +34,10 @@
   "peerDependencies": {
     "config": "*"
   },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "publishConfig": {
     "provenance": true
   }
