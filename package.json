@@ -27,7 +27,7 @@
   "homepage": "https://github.com/sjinks/node-config-reloadable#readme",
   "devDependencies": {
     "@types/config": "^3.3.3",
-    "config": "^3.3.9",
+    "config": "^4.0.0",
     "mocha": "^11.0.0",
     "nyc": "^17.0.0"
   },
