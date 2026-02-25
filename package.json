@@ -29,7 +29,7 @@
     "@types/config": "^3.3.3",
     "config": "^4.0.0",
     "mocha": "^11.0.0",
-    "nyc": "^17.0.0"
+    "nyc": "^18.0.0"
   },
   "peerDependencies": {
     "config": "*"
