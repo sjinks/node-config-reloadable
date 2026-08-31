@@ -28,7 +28,7 @@
   "devDependencies": {
     "@types/config": "^4.0.0",
     "config": "^4.0.0",
-    "mocha": "^11.0.0",
+    "mocha": "^12.0.0",
     "nyc": "^18.0.0"
   },
   "peerDependencies": {
